@@ -1,83 +1,65 @@
-# 🧪 Prueba Técnica Frontend Junior
+# Prueba Técnica - Minibares Hoteles
 
-## 🎯 Objetivo
+Este proyecto es una solución para la prueba técnica de Minibares Hoteles, desarrollada con Vite, React, TypeScript, TailwindCSS y consumo de API REST. Se enfoca en listar, buscar y paginar usuarios, haciendo énfasis en la organización de código, estado global y experiencia de usuario.
 
-Crear una aplicación en React + Vite + TailwindCSS que consuma una API pública para mostrar una lista de usuarios y su detalle. Esta prueba busca evaluar tu capacidad para estructurar una app frontend, consumir APIs, aplicar estilos y organizar el código siguiendo buenas prácticas.
+## 🛠 Tecnologías utilizadas
 
----
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [Context API (React)](https://react.dev/learn/scaling-up-with-reducer-and-context)
 
-## 🧰 Tecnologías requeridas
+## 📋 Funcionalidades implementadas
 
-- React
-- Vite
-- TailwindCSS
-- Git (repositorio público)
-- Fetch o Axios para consumir APIs
+- Listado de usuarios en cards
+- Detalles del usuario en modal
+- Paginación con botones dinámicos
+- Búsqueda por nombre o correo
+- Estado global con Context API
+- UI responsiva con Tailwind
 
----
+## 📁 Estructura del proyecto
+  ```
+    src/
+    ├── components/
+    ├── context/      
+    ├── hooks/          
+    ├── pages/
+    ├── services/          
+    ├── types/
+    ├── App.tsx
+    ├── main.tsx
+    └── ...
+  ```
 
-## 🛠️ Requisitos
+## ▶️ Instrucciones para correr el proyecto
 
-### Funcionalidades mínimas:
+1. **Clonar el repositorio**  
+  ```
+   git clone https://github.com/Daniela1421/prueba-tecnica.git
+   cd prueba-tecnica
+  ```
 
-1. **Listado de usuarios**
-   - Consumir el endpoint: `https://reqres.in/api/users?page=1`
-   - Mostrar avatar, nombre y correo en tarjetas o tabla.
+2. **Instalar dependencias del proyecto**  
+  ```
+   npm install
+  ```
 
-2. **Detalle de usuario**
-   - Al hacer clic en un usuario, mostrar detalle (usando `https://reqres.in/api/users/:id`).
-   - Puedes usar un modal o una ruta nueva.
+3. **Correr el servidor en desarrollo**  
+  ```
+   npm run dev
+  ```
+El proyecto se abrirá en http://localhost:5173.
 
-3. **Buscador**
-   - Permitir buscar por nombre o correo (filtrado en frontend).
+Asegúrate de tener Node.js v18+ instalado.
 
-4. **Responsive**
-   - Adaptar el diseño para que se vea bien en escritorio y móvil.
+## ⚙️ Decisiones técnicas tomadas
+- Se eligió Context API en lugar de herramientas como Zustand porque el estado no requiere una solución más compleja al ser una aplicación pequeña. Esto permite mantener el proyecto liviano y fácil de entender.
+- Se centralizó la lógica de consumo de API en un archivo de servicios para que sea mas facil el mantenimiento y la escalabilidad del proyecto.
+- El buscador se realizó desde el frontend usando filter para evitar llamadas innecesarias a la API, dado que el volumen de datos es manejable.
+- Para mejorar la experiencia de usuario, se implementó un modal que permite ver el detalle sin salir de la vista principal.
+- Se optó por TailwindCSS para prototipar rápido una UI limpia y responsiva, sin necesidad de escribir CSS desde cero.
 
-5. **Manejo de estados**
-   - Mostrar loader mientras carga.
-   - Mostrar mensaje si ocurre un error al consumir la API.
 
----
 
-## 💡 Bonus (no obligatorio)
-
-- Paginación usando `page=2`, etc.
-- Dark mode con Tailwind.
-- Manejo global de estado (Context API o Zustand).
-- Tests con React Testing Library o Vitest.
-- Deploy en Vercel o Netlify.
-
----
-
-## 📁 Estructura sugerida
-
-```bash
-src/
-├── components/      # Componentes reutilizables (UserCard, Loader, Modal, etc.)
-├── pages/           # Vistas principales (Home, UserDetail)
-├── services/        # Lógica para consumir APIs
-├── hooks/           # Custom hooks como useUsers
-├── App.tsx
-└── main.tsx
-```
-
-📦 Entrega
-Haz fork del repositorio: https://github.com/Minibares-Hoteles/prueba-tecnica
-
-Crea una rama con tu nombre completo en formato nombre-apellido
-
-Sube tu solución a esa rama
-
-Abre un Pull Request hacia el repositorio original en esa rama
-
-Asegúrate de incluir un README.md en tu solución con:
-
-Descripción del proyecto
-
-Instrucciones para correrlo
-
-Decisiones técnicas tomadas
-
-## ⏰ Tiempo estimado
-La prueba debe completarse en máximo 1 día desde su recepción.
